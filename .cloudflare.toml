@@ -1,0 +1,12 @@
+# Cloudflare Pages/Workers Build Configuration
+
+[build]
+command = ""
+cwd = "workers"
+
+[build.environment]
+NODE_VERSION = "18"
+
+[deploy]
+command = "npx wrangler deploy src/index.js"
+cwd = "workers"
