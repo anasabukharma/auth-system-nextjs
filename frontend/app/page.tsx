@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Logo from '@/components/Logo';
 
 export default function HomePage() {
   return (
@@ -7,14 +8,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <img 
-                src="/images/logo.png" 
-                alt="Logo" 
-                className="h-16"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
+              <Logo />
               <h1 className="text-2xl font-bold">نظام التوثيق الوطني</h1>
             </div>
           </div>

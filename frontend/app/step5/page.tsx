@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Layout from '@/components/Layout';
 import ProgressBar from '@/components/ProgressBar';
@@ -21,7 +21,7 @@ export default function Step5Page() {
   });
 
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
-  const otpRefs = Array(6).fill(0).map(() => React.useRef<HTMLInputElement>(null));
+  const otpRefs = Array(6).fill(0).map(() => useRef<HTMLInputElement>(null));
 
   const handleActivationSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

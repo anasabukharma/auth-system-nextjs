@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import Layout from '@/components/Layout';
 import ProgressBar from '@/components/ProgressBar';
@@ -10,7 +10,7 @@ export default function Step6Page() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [pin, setPin] = useState(['', '', '', '']);
-  const pinRefs = Array(4).fill(0).map(() => React.useRef<HTMLInputElement>(null));
+  const pinRefs = Array(4).fill(0).map(() => useRef<HTMLInputElement>(null));
 
   const handlePinChange = (index: number, value: string) => {
     if (value.length > 1) return;

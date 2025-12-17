@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Logo from './Logo';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,14 +13,7 @@ export default function Layout({ children, title }: LayoutProps) {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-4 hover:opacity-90 transition-opacity">
-              <img 
-                src="/images/logo.png" 
-                alt="Logo" 
-                className="h-16"
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
+              <Logo />
               <h1 className="text-2xl font-bold">نظام التوثيق الوطني</h1>
             </Link>
           </div>
