@@ -5,4 +5,4 @@ compatibility_date = "2024-12-17"
 [[d1_databases]]
 binding = "DB"
 database_name = "auth-system-db"
-database_id = "" # Will be filled after creating D1 database
+database_id = "f2e670ca-4a5d-4aa3-9dac-83d5f8e22ad5"
