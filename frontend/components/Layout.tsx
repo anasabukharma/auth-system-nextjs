@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Logo from './Logo';
+import Image from 'next/image';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -9,35 +9,47 @@ interface LayoutProps {
 export default function Layout({ children, title }: LayoutProps) {
   return (
     <div className="min-h-screen bg-gray-50" dir="rtl">
-      <header className="bg-[#630527] text-white py-4 shadow-lg">
-        <div className="container mx-auto px-4">
+      {/* Header - White background like original */}
+      <header className="bg-white border-b border-gray-200">
+        <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-4 hover:opacity-90 transition-opacity">
-              <Logo />
-              <h1 className="text-2xl font-bold">نظام التوثيق الوطني</h1>
-            </Link>
+            <div className="flex items-center gap-4">
+              <Link href="/" className="hover:opacity-90 transition-opacity">
+                <Image 
+                  src="/tawtheeq-logo.png" 
+                  alt="Tawtheeq Logo" 
+                  width={120} 
+                  height={60}
+                  className="h-12 w-auto"
+                />
+              </Link>
+              <div className="flex gap-4 text-sm">
+                <Link href="/login" className="text-[#0876b1] hover:underline">
+                  تسجيل الدخول
+                </Link>
+                <Link href="#" className="text-[#0876b1] hover:underline">
+                  English
+                </Link>
+              </div>
+            </div>
+            <div className="text-left">
+              <h1 className="text-[#630527] text-xl font-bold">نظام التوثيق الوطني</h1>
+              <p className="text-gray-600 text-sm">National Authentication System</p>
+            </div>
           </div>
         </div>
       </header>
 
       <main className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-lg shadow-md p-8">
-            {title && (
-              <div className="border-b pb-4 mb-6">
-                <h1 className="text-2xl font-bold text-gray-800">
-                  {title}
-                </h1>
-              </div>
-            )}
-            {children}
-          </div>
+        <div className="max-w-5xl mx-auto">
+          {children}
         </div>
       </main>
 
-      <footer className="bg-gray-800 text-white py-6 mt-12">
+      {/* Footer - matching original */}
+      <footer className="bg-white border-t border-gray-200 py-4 mt-12">
         <div className="container mx-auto px-4 text-center">
-          <p>© 2024 نظام التوثيق الوطني. جميع الحقوق محفوظة.</p>
+          <p className="text-gray-600 text-sm">© 2025 حكومة قطر</p>
         </div>
       </footer>
     </div>
