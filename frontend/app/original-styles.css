@@ -1,0 +1,134 @@
+/* Import the extracted original styles */
+@import url('/original-styles.css');
+
+/* Import Bootstrap 3 CSS (simulated, as we don't have the file) */
+/* We will rely on the extracted styles and Tailwind classes for now */
+
+/* Global overrides to match original EJS look */
+body {
+    background-color: #f5f5f5 !important; /* Light gray background */
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* Custom styles from original EJS */
+.navbar-nas-fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    background-color: #fff;
+    border-bottom: 1px solid #e7e7e7;
+    min-height: 50px;
+}
+
+.nas-header {
+    margin-top: 50px; /* Space for fixed header */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.nas-content {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.nas-footer {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #fff;
+    border-top: 1px solid #e7e7e7;
+    text-align: center;
+    color: #777;
+}
+
+/* Progress bar styles from original EJS */
+.progress-bar-container {
+    margin-bottom: 20px;
+}
+
+.progress-bar-step {
+    text-align: center;
+    position: relative;
+}
+
+.progress-bar-step .circle {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: #ccc;
+    color: #fff;
+    font-weight: bold;
+    margin: 0 auto 5px;
+    z-index: 10;
+    position: relative;
+}
+
+.progress-bar-step.active .circle {
+    background-color: #0876b1;
+}
+
+.progress-bar-step.completed .circle {
+    background-color: #0876b1;
+}
+
+.progress-bar-step .label {
+    font-size: 12px;
+    color: #777;
+}
+
+.progress-bar-step.active .label {
+    color: #0876b1;
+    font-weight: bold;
+}
+
+.progress-bar-line {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    right: 50%;
+    height: 2px;
+    background-color: #ccc;
+    z-index: 5;
+}
+
+.progress-bar-line-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #0876b1;
+    transition: width 0.5s ease-in-out;
+}
